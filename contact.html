@@ -1,0 +1,156 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTACT</title>
+    <meta name="description" content="Zapraszam do zapoznania się z moją własną stroną www" />
+    <meta name="keywords" content="Pawel,Paweł,Gałkowski Paweł Gałkowski, Pawel Galkowski, pierwsza strona, praca it, profesjonalista, programista,it" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:500i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400i" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDiylYUsnlLaDmEdUnZG5ym6hRw34dfcAk&callback=myMap"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <link rel="stylesheet" href="animate.css">
+    <link rel="Shortcut icon" href="img/icon.ico" />
+    <script src="script.js"></script>
+    <script src="wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <script type="text/javascript">
+        function myMap() {
+            var myCenter = new google.maps.LatLng(51.1078852, 17.03853760000004);
+            var mapCanvas = document.getElementById("map");
+            var mapOptions = {
+                center: myCenter,
+                zoom: 8
+            };
+            var map = new google.maps.Map(mapCanvas, mapOptions);
+            var marker = new google.maps.Marker({
+                position: myCenter
+            });
+            marker.setMap(map);
+        }
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            $("html").on("submit", "#contact_form", function(e) {
+                e.preventDefault();
+                $("#send_form_status").html('').hide();
+                var data = $("#contact_form").serialize();
+                $.post("/send_form.php", data, function(res) {
+                    $("#send_form_status").html(res.msg).show();
+                    if (res.status == 1) {
+                        $("#contact_form")[0].reset();
+                    }
+                });
+            });
+        });
+    </script>
+    <script>
+        jQuery(document).ready(function($) {
+
+            $(window).load(function() {
+                $('#preloader').fadeOut('slow', function() {
+                    $(this).remove();
+                });
+            });
+
+        });
+    </script>
+
+</head>
+
+<body onload="myMap()">
+    <header>
+        <div id="preloader">
+            <div id="loader">
+                <div id="stage">
+                    <div id="shape" class="ring backfaces">
+                        <div class="plane one">L</div>
+                        <div class="plane two">O</div>
+                        <div class="plane three">A</div>
+                        <div class="plane four">D</div>
+                        <div class="plane five">I</div>
+                        <div class="plane six">N</div>
+                        <div class="plane seven">G</div>
+                        <div class="plane eight">.</div>
+                        <div class="plane nine">.</div>
+                        <div class="plane ten">.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="controls">
+                <div><input type="checkbox" id="backfaces" onclick="toggleBackfaces()" checked><label for="backfaces">Backfaces visible</label></div>
+            </div>
+        </div>
+        <nav class="page-navigation clearfix wow fadeInLeft" data-wow-delay="0.2s" data-wow-duration="2s">
+            <label class="navigation-toggle" for="input-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <input type="checkbox" id="input-toggle">
+            <ul class="menu">
+                <li><a href="index.html" id="boxText1" href="#">HOME</a></li>
+                <li><a href="about.html" id="boxText2" href="#">ABOUT ME</a></li>
+                <li><a href="projects.html" id="boxText3" href="#">PROJECTS</a></li>
+                <li><a href="contact.html" id="boxText4" href="#">CONTACT</a></li>
+            </ul>
+        </nav>
+
+        <!---------------------------------------------------------------------------------------------------->
+    </header>
+    <main>
+        <article class="ContactZone">
+            <div class="container">
+                <div id="zoneCreator">
+                    <div id="send_form_status"></div>
+                    <form method="post" action="/send_form.php" id="contact_form">
+                        <div class="text-post">
+                            I'm not a company I works remotely alone so I need more time to do web service but the
+                            <u>&nbsp;price is lower.</u>
+                            <br />
+                            I'm building beautiful responsing pages.
+                            <br />
+                            Contact me to discuss about your wants.
+                            <br />
+                            <br />
+                            Phone: +48 697 522 113 | Email: <a href="mailto:poczta@itgalkowski.pl">poczta@itgalkowski.pl</a><br /> </div>
+                        <input name="name" type="text" id="name" class="formField" data-wow-delay="0.2s" placeholder="First Name" required />
+                        <input type="email" name="email" id="email" class="formField" data-wow-delay="0.2s" placeholder="Email Address" required />
+                        <input type="number" name="title" id="title" class="formField" data-wow-delay="0.2s" placeholder="Phone" required />
+                        <textarea type="text" name="message" id="message" data-wow-delay="0.2s" placeholder="Your Query" required></textarea>
+                        <div class="g-recaptcha" data-sitekey="6LffvmYUAAAAAIdwUG624PYZkl69L54YzXuabp79"></div>
+                        <button id="button" type="submit" title="Naciśnij by wysłać">SUBMIT</button>
+                        <div style="clear:both;"></div>
+                    </form>
+                    <div class="column2">
+                        <div id="map"></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+        </article>
+        <footer>
+            <div class="footer-items">
+                <div class="linked-icons">
+                    <a target="_blank" title="facebook" href="https://www.facebook.com/profile.php?id=100003495743297"><i class="fab fa-facebook"></i></a>
+                    <a target="_blank" title="github" href="https://github.com/rocksdevil"><i class="fab fa-github"></i></a>
+                    <a target="_blank" title="linkedin" href="https://www.linkedin.com/in/pawe%C5%82-ga%C5%82kowski-18a271153/"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <h4>tel: +48 697 522 113</h4>
+                <h3>2018r. © itgalkowski.pl</h3>
+            </div>
+        </footer>
+    </main>
+</body>
+</html>
