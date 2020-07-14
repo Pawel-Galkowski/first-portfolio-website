@@ -11,3 +11,18 @@ $(document).ready(function() {
     });
   });
 });
+
+
+function myMap() {
+  var myCenter = new google.maps.LatLng(51.1078852, 17.03853760000004);
+  var mapCanvas = document.getElementById("map");
+  var mapOptions = {
+      center: myCenter,
+      zoom: 8
+  };
+  var map = new google.maps.Map(mapCanvas, mapOptions);
+  var marker = new google.maps.Marker({
+      position: myCenter
+  });
+  marker.setMap(map);
+}

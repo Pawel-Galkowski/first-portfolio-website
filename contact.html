@@ -14,32 +14,17 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
     <link rel="stylesheet" href="style.css" />
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwJvuY2xseHdjjmTbGqq5yb3nUCM-ebl0&callback=myMap">
+    <script src="script.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIav4quZhu6gOMZu8zKrZgyEjByWUHxAo&callback=myMap">
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
     <script src="https://www.google.com/recaptcha/api.js"></script>
     <link rel="stylesheet" href="animate.css">
     <link rel="Shortcut icon" href="img/icon.ico" />
-    <script src="script.js"></script>
     <script src="wow.min.js"></script>
     <script>
         new WOW().init();
-    </script>
-    <script type="text/javascript">
-        function myMap() {
-            var myCenter = new google.maps.LatLng(51.1078852, 17.03853760000004);
-            var mapCanvas = document.getElementById("map");
-            var mapOptions = {
-                center: myCenter,
-                zoom: 8
-            };
-            var map = new google.maps.Map(mapCanvas, mapOptions);
-            var marker = new google.maps.Marker({
-                position: myCenter
-            });
-            marker.setMap(map);
-        }
     </script>
 
     <script>
