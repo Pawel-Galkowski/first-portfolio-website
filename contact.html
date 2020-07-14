@@ -1,21 +1,24 @@
 <!DOCTYPE HTML>
 <html lang="pl">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CONTACT</title>
     <meta name="description" content="Zapraszam do zapoznania się z moją własną stroną www" />
-    <meta name="keywords" content="Pawel,Paweł,Gałkowski Paweł Gałkowski, Pawel Galkowski, pierwsza strona, praca it, profesjonalista, programista,it" />
+    <meta name="keywords"
+        content="Pawel,Paweł,Gałkowski Paweł Gałkowski, Pawel Galkowski, pierwsza strona, praca it, profesjonalista, programista,it" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:500i" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400i" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
     <link rel="stylesheet" href="style.css" />
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwJvuY2xseHdjjmTbGqq5yb3nUCM-ebl0&callback=myMap"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwJvuY2xseHdjjmTbGqq5yb3nUCM-ebl0&callback=myMap">
+    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
     <link rel="stylesheet" href="animate.css">
     <link rel="Shortcut icon" href="img/icon.ico" />
     <script src="script.js"></script>
@@ -40,12 +43,12 @@
     </script>
 
     <script>
-        $(document).ready(function() {
-            $("html").on("submit", "#contact_form", function(e) {
+        $(document).ready(function () {
+            $("html").on("submit", "#contact_form", function (e) {
                 e.preventDefault();
                 $("#send_form_status").html('').hide();
                 var data = $("#contact_form").serialize();
-                $.post("/send_form.php", data, function(res) {
+                $.post("/send_form.php", data, function (res) {
                     $("#send_form_status").html(res.msg).show();
                     if (res.status == 1) {
                         $("#contact_form")[0].reset();
@@ -55,10 +58,10 @@
         });
     </script>
     <script>
-        jQuery(document).ready(function($) {
+        jQuery(document).ready(function ($) {
 
-            $(window).load(function() {
-                $('#preloader').fadeOut('slow', function() {
+            $(window).load(function () {
+                $('#preloader').fadeOut('slow', function () {
                     $(this).remove();
                 });
             });
@@ -87,9 +90,6 @@
                     </div>
                 </div>
             </div>
-            <div class="controls">
-                <div><input type="checkbox" id="backfaces" onclick="toggleBackfaces()" checked><label for="backfaces">Backfaces visible</label></div>
-            </div>
         </div>
         <nav class="page-navigation clearfix wow fadeInLeft" data-wow-delay="0.2s" data-wow-duration="2s">
             <label class="navigation-toggle" for="input-toggle">
@@ -106,8 +106,6 @@
                 <li><a href="contact.html" id="boxText4" href="#">CONTACT</a></li>
             </ul>
         </nav>
-
-        <!---------------------------------------------------------------------------------------------------->
     </header>
     <main>
         <article class="ContactZone">
@@ -124,12 +122,17 @@
                             Contact me to discuss about your wants.
                             <br />
                             <br />
-                            Phone: +48 697 522 113 | Email: <a href="mailto:poczta@itgalkowski.pl">poczta@itgalkowski.pl</a><br /> </div>
-                        <input name="name" type="text" id="name" class="formField" data-wow-delay="0.2s" placeholder="First Name" required />
-                        <input type="email" name="email" id="email" class="formField" data-wow-delay="0.2s" placeholder="Email Address" required />
-                        <input type="number" name="title" id="title" class="formField" data-wow-delay="0.2s" placeholder="Phone" required />
-                        <textarea type="text" name="message" id="message" data-wow-delay="0.2s" placeholder="Your Query" required></textarea>
-                        <div class="g-recaptcha" data-sitekey="6LffvmYUAAAAAIdwUG624PYZkl69L54YzXuabp79"></div>
+                            Phone: +48 697 522 113 | Email: <a
+                                href="mailto:poczta@itgalkowski.pl">poczta@itgalkowski.pl</a><br /> </div>
+                        <input name="name" type="text" id="name" class="formField" data-wow-delay="0.2s"
+                            placeholder="First Name" required />
+                        <input type="email" name="email" id="email" class="formField" data-wow-delay="0.2s"
+                            placeholder="Email Address" required />
+                        <input type="number" name="title" id="title" class="formField" data-wow-delay="0.2s"
+                            placeholder="Phone" required />
+                        <textarea type="text" name="message" id="message" data-wow-delay="0.2s" placeholder="Your Query"
+                            required></textarea>
+                        <div class="g-recaptcha" data-sitekey="6LcjYLEZAAAAAG-RPfxipbHeRUttSIZe4jUFJQmQ"></div>
                         <button id="button" type="submit" title="Naciśnij by wysłać">SUBMIT</button>
                         <div style="clear:both;"></div>
                     </form>
@@ -143,9 +146,13 @@
         <footer>
             <div class="footer-items">
                 <div class="linked-icons">
-                    <a target="_blank" title="facebook" href="https://www.facebook.com/profile.php?id=100003495743297"><i class="fab fa-facebook"></i></a>
-                    <a target="_blank" title="github" href="https://github.com/rocksdevil"><i class="fab fa-github"></i></a>
-                    <a target="_blank" title="linkedin" href="https://www.linkedin.com/in/pawe%C5%82-ga%C5%82kowski-18a271153/"><i class="fab fa-linkedin"></i></a>
+                    <a target="_blank" title="facebook"
+                        href="https://www.facebook.com/profile.php?id=100003495743297"><i
+                            class="fab fa-facebook"></i></a>
+                    <a target="_blank" title="github" href="https://github.com/rocksdevil"><i
+                            class="fab fa-github"></i></a>
+                    <a target="_blank" title="linkedin" href="https://www.linkedin.com/in/pawel-galkowski/"><i
+                            class="fab fa-linkedin"></i></a>
                 </div>
                 <h4>tel: +48 697 522 113</h4>
                 <h3>2018r. © itgalkowski.pl</h3>
@@ -153,4 +160,5 @@
         </footer>
     </main>
 </body>
+
 </html>
