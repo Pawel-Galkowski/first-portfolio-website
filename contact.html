@@ -14,11 +14,11 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
     <link rel="stylesheet" href="style.css" />
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
     <script src="script.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIav4quZhu6gOMZu8zKrZgyEjByWUHxAo&callback=myMap">
     </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
     <script src="https://www.google.com/recaptcha/api.js"></script>
     <link rel="stylesheet" href="animate.css">
     <link rel="Shortcut icon" href="img/icon.ico" />
@@ -26,7 +26,6 @@
     <script>
         new WOW().init();
     </script>
-
     <script>
         $(document).ready(function () {
             $("html").on("submit", "#contact_form", function (e) {
@@ -41,6 +40,11 @@
                 });
             });
         });
+    </script>
+    <script>
+        function onSubmit(token) {
+            document.getElementById("contact_form").submit();
+        }
     </script>
     <script>
         jQuery(document).ready(function ($) {
@@ -117,8 +121,8 @@
                             placeholder="Phone" required />
                         <textarea type="text" name="message" id="message" data-wow-delay="0.2s" placeholder="Your Query"
                             required></textarea>
-                        <div class="g-recaptcha" data-sitekey="6LcjYLEZAAAAAG-RPfxipbHeRUttSIZe4jUFJQmQ"></div>
-                        <button id="button" type="submit" title="Naciśnij by wysłać">SUBMIT</button>
+                        <button id="button" type="submit" data-sitekey="6LcjYLEZAAAAAG-RPfxipbHeRUttSIZe4jUFJQmQ" 
+                        data-callback='onSubmit' data-action='submit' title="Naciśnij by wysłać">SUBMIT</button>
                         <div style="clear:both;"></div>
                     </form>
                     <div class="column2">
