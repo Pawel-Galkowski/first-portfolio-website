@@ -928,10 +928,6 @@ a {
 
 #contact_form {
     width: 45%;
-    height: 100%;
-    margin: 2% 0 2% 0;
-    padding: 0 3% 0 0;
-    background-color: transparent;
     line-height: 1.2em;
 }
 
@@ -1017,7 +1013,6 @@ a {
     font-size: 0.8em;
     border: 1.3px solid gray;
     width: 20%;
-    height: 30px;
     font-weight: bold;
     margin-bottom: 1%;
     border: none;
@@ -1032,20 +1027,6 @@ a {
     background-color: #F3291A;
 }
 /*-----------------------------------------------------------------------------------------------------------*/
-/* Bordered form */
-form {
-  border: 3px solid #f1f1f1;
-}
-
-/* Full-width inputs */
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
 
 /* Set a style for all buttons */
 button {
