@@ -1,6 +1,6 @@
 # First Portfolio website
-Portfolio website created in 2018. 
-Designed and created by Pawel Galkowski.
+Portfolio website created in 2018. <br/>
+Designed and created by Pawel Galkowski. <br/>
 Live wiew at [first-portfolio-website](https://rocksdevil.github.io/first-portfolio-website/)
 
 ## Technology
