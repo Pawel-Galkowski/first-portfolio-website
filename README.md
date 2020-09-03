@@ -14,5 +14,6 @@ Live wiew at [first-portfolio-website](https://rocksdevil.github.io/first-portfo
 Download and open index.html with browser.
 
 ## License
-[MIT](https://choosealicense.com/licenses/mit/)
+[ISC](https://choosealicense.com/licenses/isc/)
+
 
